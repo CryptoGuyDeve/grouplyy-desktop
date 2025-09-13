@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grouplyy</title>
+  <link rel="stylesheet" href="splash.css">
+</head>
+<body>
+  <div class="splash-container">
+    <img src="assets/logo.png" alt="Grouplyy Logo" class="logo" />
+    <h2>Starting Grouplyy...</h2>
+    <p class="tagline">Real-time chat. HD video. Smarter groups.</p>
+    <div class="loader"></div>
+    <div class="status">Loading modules...</div>
+    <div class="quotes" id="quote"></div>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+
+  <script>
+    // rotating quotes
+    const quotes = [
+      "Connecting people, not just messages.",
+      "Your space. Your rules.",
+      "Chats, calls, and groups made simple.",
+      "Fast. Modern. Secure.",
+      "Where conversations feel alive."
+    ];
+    let i = 0;
+    const quoteEl = document.getElementById("quote");
+    function rotateQuotes() {
+      quoteEl.style.opacity = 0;
+      setTimeout(() => {
+        quoteEl.textContent = quotes[i];
+        quoteEl.style.opacity = 1;
+        i = (i + 1) % quotes.length;
+      }, 500);
+    }
+    rotateQuotes();
+    setInterval(rotateQuotes, 4000);
+  </script>
+</body>
+</html>

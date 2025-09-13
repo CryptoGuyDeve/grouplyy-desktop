@@ -1,0 +1,63 @@
+{
+  "name": "grouplyy-desktop",
+  "version": "1.0.0",
+  "description": "Desktop wrapper for Grouplyy",
+  "main": "main.js",
+  "author": "Faiz",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir"
+  },
+  "keywords": [
+    "chat",
+    "calls",
+    "groups",
+    "messenger",
+    "electron"
+  ],
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.grouplyy.app",
+    "productName": "Grouplyy",
+    "directories": {
+      "buildResources": "assets"
+    },
+    "files": [
+      "**/*",
+      "assets/**"
+    ],
+    "win": {
+      "icon": "assets/icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "icon": "assets/icon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "mac": {
+      "icon": "assets/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "CryptoGuyDeve",
+        "repo": "grouplyy-desktop"
+      }
+    ]
+  }
+}
