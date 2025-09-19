@@ -30,7 +30,7 @@
       "buildResources": "assets"
     },
     "win": {
-      "icon": "assets/icon.png"
+      "icon": "assets/icon.ico"
     },
     "linux": {
       "icon": "assets/icon.png"

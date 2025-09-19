@@ -4,13 +4,19 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: './assets/icon.png',
+    // Use .ico for Windows to ensure correct shortcut/taskbar icon
+    icon: './assets/icon.ico',
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        // Name for Start Menu/Desktop shortcuts
+        shortcutName: 'Grouplyy',
+        // Installer icon (.ico)
+        setupIcon: './assets/icon.ico',
+      },
     },
     {
       name: '@electron-forge/maker-zip',
